@@ -1,11 +1,9 @@
-# Projet GeoPro
-Projet de géolocalisation à destination des commerciaux permettant de géolocaliser
-les professionnels affiliés à Pages Jaunes (cliens et prospects). Les informations
-de chaque établissement affiché sont liées aux activités et communes.
+# Projet GeoRequetes
+Projet de géolocalisation des requêtes effectuées sur le site Pages Jaunes
 
 
 ## Présentation
-Ce projet est la version IHM de l'outil GeoPro. Il s'appuie sur les données Elasticsearch chargées préalablement au moyen des scripts fournis par le projet d'initialisation : https://git.test.services.local/dt_ct_ioda/geopro-init
+Ce projet est la version IHM de l'outil GeoRequetes. Il s'appuie sur les données Elasticsearch chargées préalablement au moyen des scripts fournis par le projet d'initialisation : https://github.com/GalakFayyar/p4
 
 Ce projet s'appuie sur la librairie LeafletJS (http://leafletjs.com/) pour le rendu des éléments cartographiés, et sur le projet OpenStreetMap (https://www.openstreetmap.org/) pour les fonds de carte. Aucune clé n'est requise pour l'utilisation.
 
