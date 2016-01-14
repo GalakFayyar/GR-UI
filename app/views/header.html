@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">GeoRequetes</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+        <form class="custom-navbar-right" role="search">
+            <div class="navbar-right">
+                <ui-select  ng-change="selectQuiQuoi()"
+                            focus-on="SelectFocusQuiQuoi"
+                            ng-model="quiquoi.selected"
+                            theme="selectize"
+                            reset-search-input="true"
+                            class="custom-form-control" 
+                            style="display:inline-block;width:300px">
+                    <ui-select-match placeholder="Recherche par Qui Quoi">
+                        {{$select.selected.libelle}}
+                        <button class="clear glyphicon glyphicon-remove" ng-click="clear_field($event, quiquoi)"></button>
+                    </ui-select-match>
+                    <ui-select-choices repeat="quiquoi in list_quiquois | limitTo: 50"
+                            refresh="refreshQuiQuois($select.search)"
+                            refresh-delay="0">
+                        <div ng-bind-html="quiquoi.libelle | highlight: $select.search"></div>
+                        <!-- <small ng-bind-html="''+quiquoi.code | highlight: $select.search"></small> -->
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </form>
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#" ng-click="toggleSidebarFiltres()"><i class="glyphicon glyphicon-filter" style="color:white"></i>&nbsp;Filtres</a>
+            </li>
+            <li>
+                <a href="#" ng-click="toggleSidebarPanier()"><i class="glyphicon glyphicon-shopping-cart" style="color:white"></i>&nbsp;Panier</a>
+            </li>
+            <!-- <li>
+                <toggle-switch style="margin-top:10px;" knob-label="Vision" on-label="Client" off-label="Commercial" ng-model="switchStatusClient.value" ng-change="switchStatusClient()" title="" ng-disabled=""><toggle-switch>
+            </li> -->
+        </ul>
+    </div>
+</div><!--/.navbar-collapse -->
